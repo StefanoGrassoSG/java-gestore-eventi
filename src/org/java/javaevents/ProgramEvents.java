@@ -34,7 +34,7 @@ public class ProgramEvents {
 	}
 	
 	public void sortEventsByDate() {
-		Collections.sort(events, (event1, event2) -> event1.getDate().compareTo(event2.getDate()));
+		Collections.sort(events, (d1, d2) -> d1.getDate().compareTo(d2.getDate()));
 	}
 	
 	public List<Event> eventForDate(String date) {
