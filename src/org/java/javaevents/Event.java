@@ -6,18 +6,16 @@ import java.time.format.DateTimeFormatter;
 public class Event {
 	
 	private String title;
-	private String date;
+	private LocalDate date;
 	private int totalSeats;
 	private int reservedSeats = 0;
 	LocalDate today = LocalDate.now();
 	protected LocalDate converted; 
 	
 	public Event(String title, String date, int totalSeats) throws Exception {
-		this.date = date;
-		this.converted = convert(this.date);
 
 		setTitle(title);
-		setDate(date);
+		setDate(convert(date));
 		setTotalSeats(totalSeats);
 	}
 	
@@ -33,11 +31,11 @@ public class Event {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
-	public void setDate(String date) throws Exception {
-		if (converted.isBefore(today)) 
+	public void setDate(LocalDate date) throws Exception {
+		if (date.isBefore(today)) 
 			throw new Exception("the date must be higher");
 		this.date = date;
 	}
@@ -69,8 +67,11 @@ public class Event {
 	
 	@Override
 	public String toString() {
-		return "Nome vento: " + getTitle() + "\n"
-				+ "Data: " + converted + "\n"
-				+ "Posti disponibili: " + getTotalSeats();
+		return "Nome evento: " + getTitle() + "\n"
+				+ "Data: " + getDate() + "\n"
+				+ "Posti disponibili: " + getTotalSeats()
+				+ "\n"
+				+ "---------------------------------------"
+				+ "\n";
 	}			
 }

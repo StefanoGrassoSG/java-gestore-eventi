@@ -5,16 +5,14 @@ import java.time.format.DateTimeFormatter;
 
 public class Concert extends Event {
 	
-	private String time;
+	private LocalTime time;
 	private double price;
 	private LocalTime converted; 
 	
 	public Concert(String title, String date, int totalSeats, String time, double price) throws Exception {
 		super(title, date, totalSeats);
-		this.time = time;
-		this.converted = convertTime(this.time);
-		
-		setTime(time);
+
+		setTime(convertTime(time));
 		setPrice(price);
 	}
 	
@@ -24,10 +22,10 @@ public class Concert extends Event {
         return LocalTime.parse(time, formatter);
 	}
 
-	public String getTime() {
+	public LocalTime getTime() {
 		return time;
 	}
-	public void setTime(String time) {
+	public void setTime(LocalTime time) {
 		this.time = time;
 	}
 	public double getPrice() {
