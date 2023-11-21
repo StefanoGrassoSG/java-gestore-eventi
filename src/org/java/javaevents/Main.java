@@ -21,13 +21,19 @@ public class Main {
 			System.out.println(e);
 		} catch (Exception ex) {
 			System.out.println(ex);
+			in.close();
 			return;
 		}
 		
 		System.out.println("vuoi prenotare?[y][n]");
 		String input = in.nextLine();
 		
-		if(input.equals("n")) System.out.println("terminato");
+		if(input.equals("n")) {
+			System.out.println("terminato");
+			in.close();
+			return;
+		}
+		
 		
 		System.out.println("quanti posti vuoi prenotare?");
 		int seatsNumber = Integer.parseInt(in.nextLine());
@@ -50,5 +56,9 @@ public class Main {
 		
 		System.out.println("posti prenotati: " + e.getReservedSeats() + "\n"
 							+ "posti disponibili: " + e.getTotalSeats());
+		in.close();
+		
+		Concert c = new Concert("vasco", "15-12-2023", 100, "16:00", 50.50);
+		System.out.println(c);
 	}
 }

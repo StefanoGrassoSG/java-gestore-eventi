@@ -10,19 +10,21 @@ public class Event {
 	private int totalSeats;
 	private int reservedSeats = 0;
 	LocalDate today = LocalDate.now();
-	String pattern;
-	DateTimeFormatter formatter;
-	LocalDate data;
+	protected LocalDate converted; 
 	
 	public Event(String title, String date, int totalSeats) throws Exception {
-		this.pattern = "dd-MM-yyyy";
-		this.formatter = DateTimeFormatter.ofPattern(pattern);
 		this.date = date;
-		this.data = LocalDate.parse(this.date, formatter);
-		
+		this.converted = convert(this.date);
+
 		setTitle(title);
 		setDate(date);
 		setTotalSeats(totalSeats);
+	}
+	
+	public LocalDate convert(String date) {
+        String pattern = "dd-MM-yyyy";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+        return LocalDate.parse(date, formatter);
 	}
 
 	public String getTitle() {
@@ -35,7 +37,7 @@ public class Event {
 		return date;
 	}
 	public void setDate(String date) throws Exception {
-		if (data.isBefore(today)) 
+		if (converted.isBefore(today)) 
 			throw new Exception("the date must be higher");
 		this.date = date;
 	}
@@ -52,22 +54,23 @@ public class Event {
 	}
 	
 	public void reserve(int number) throws Exception {
-		if(data.isBefore(today) || getTotalSeats() < 1)
+		if(converted.isBefore(today) || getTotalSeats() < 1)
 			throw new Exception("the event has already occurred or there are no more seats available");
 		this.reservedSeats += number;
 		this.totalSeats -= number;
 	}
 	public void cancel(int number) throws Exception {
-		if(data.isBefore(today) || getReservedSeats() < 1)
+		if(converted.isBefore(today) || getReservedSeats() < 1)
 			throw new Exception("the event has already occurred or there are no reserved seats");
 		this.reservedSeats -= number;
 		this.totalSeats += number;
 	}
 	
+	
 	@Override
 	public String toString() {
-		return "Event name: " + getTitle() + "\n"
-				+ "Event date: " + getDate().formatted(this.formatter) + "\n"
-				+ "Total seats: " + getTotalSeats();
+		return "Nome vento: " + getTitle() + "\n"
+				+ "Data: " + converted + "\n"
+				+ "Posti disponibili: " + getTotalSeats();
 	}			
 }
