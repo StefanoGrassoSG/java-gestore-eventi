@@ -78,7 +78,7 @@ public class Main {
 	        eventList.add(f);
 	        eventList.add(g);
 		
-		ProgramEvents p = new ProgramEvents("fiera fegli eventi brutti", eventList);
+		ProgramEvents p = new ProgramEvents("fiera degli eventi brutti", eventList);
 		Event h = new Event("concerto8", "21-12-2023", 100);
 		p.addEvent(h);
 		System.out.println(p.eventForDate("21-12-2023"));
