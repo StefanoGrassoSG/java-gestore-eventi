@@ -38,7 +38,6 @@ public class ProgramEvents {
 	}
 	
 	public List<Event> eventForDate(String date) {
-		sortEventsByDate();
 		 List<Event> eventsForDate = new ArrayList<>();
 		 String pattern = "dd-MM-yyyy";
 		 DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
@@ -61,6 +60,7 @@ public class ProgramEvents {
 	}
 	
 	public void eventDate() {
+		sortEventsByDate();
 	   System.out.println("Titolo: " + getTitle());
         for (int x=0;x<getNumberEvents();x++) {
              Event event = getEvents().get(x);
