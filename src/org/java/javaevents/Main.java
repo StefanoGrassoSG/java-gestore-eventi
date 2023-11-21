@@ -61,12 +61,12 @@ public class Main {
 //		Concert c = new Concert("vasco", "15-12-2023", 100, "16:00", 50.50);
 //		System.out.println(c);
 		
-		Event a = new Event("concerto1", "15-12-2023", 100);
-		Event b = new Event("concerto2", "16-12-2023", 100);
+		Event a = new Event("concerto1", "19-12-2023", 100);
+		Event b = new Event("concerto2", "20-12-2023", 100);
 		Event c = new Event("concerto3", "17-12-2023", 100);
 		Event d = new Event("concerto4", "18-12-2023", 100);
-		Event e = new Event("concerto5", "19-12-2023", 100);
-		Event f = new Event("concerto6", "20-12-2023", 100);
+		Event e = new Event("concerto5", "15-12-2023", 100);
+		Event f = new Event("concerto6", "16-12-2023", 100);
 		Event g = new Event("concerto7", "21-12-2023", 100);
 		
 		List<Event> eventList = new ArrayList<>();

@@ -3,6 +3,7 @@ package org.java.javaevents;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ProgramEvents {
@@ -32,7 +33,12 @@ public class ProgramEvents {
 		events.add(event);
 	}
 	
+	public void sortEventsByDate() {
+		Collections.sort(events, (event1, event2) -> event1.getDate().compareTo(event2.getDate()));
+	}
+	
 	public List<Event> eventForDate(String date) {
+		sortEventsByDate();
 		 List<Event> eventsForDate = new ArrayList<>();
 		 String pattern = "dd-MM-yyyy";
 		 DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
