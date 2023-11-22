@@ -21,46 +21,46 @@ public class Main {
 //		try {
 //			e = new Event(name, date, seats);
 //			System.out.println(e);
-			System.out.println("vuoi prenotare?[y][n]");
-	//		String input = in.nextLine();
-	//		
-	//		if(input.equals("n")) {
-	//			System.out.println("terminato");
-	//			in.close();
-	//			return;
-	//		}
-	//		
-	//		System.out.println("quanti posti vuoi prenotare?");
-	//		int seatsNumber = Integer.parseInt(in.nextLine());
-	//		
-	//		e.reserve(seatsNumber);
-	//		
-	//		System.out.println("posti prenotati: " + e.getReservedSeats() + "\n"
-	//							+ "posti disponibili: " + e.getTotalSeats());
-	//		
-	//		System.out.println("vuoi disdire?[y][n]");
-	//		String input2 = in.nextLine();
-	//		
-	//		if(input2.equals("n")) System.out.println("terminato");
-	//		
-	//		System.out.println("quanti posti vuoi disdire?");
-	//		int seatsNumberCancel = Integer.parseInt(in.nextLine());
-	//		
-	//		e.cancel(seatsNumberCancel);
-	//		
-	//		System.out.println("posti prenotati: " + e.getReservedSeats() + "\n"
-	//							+ "posti disponibili: " + e.getTotalSeats());
-	//		in.close();
-	//		} catch (Exception ex) {
-	//			System.out.println(ex);
-	//			in.close();
-	//			return;
-	//		}
-//		
-//		
-//		
-//		Concert c = new Concert("vasco", "15-12-2023", 100, "16:00", 50.50);
-//		System.out.println(c);
+//			System.out.println("vuoi prenotare?[y][n]");
+//			String input = in.nextLine();
+//			
+//			if(input.equals("n")) {
+//				System.out.println("terminato");
+//				in.close();
+//				return;
+//			}
+//			
+//			System.out.println("quanti posti vuoi prenotare?");
+//			int seatsNumber = Integer.parseInt(in.nextLine());
+//			
+//			e.reserve(seatsNumber);
+//			
+//			System.out.println("posti prenotati: " + e.getReservedSeats() + "\n"
+//								+ "posti disponibili: " + e.getTotalSeats());
+//			
+//			System.out.println("vuoi disdire?[y][n]");
+//			String input2 = in.nextLine();
+//			
+//			if(input2.equals("n")) System.out.println("terminato");
+//			
+//			System.out.println("quanti posti vuoi disdire?");
+//			int seatsNumberCancel = Integer.parseInt(in.nextLine());
+//			
+//			e.cancel(seatsNumberCancel);
+//			
+//			System.out.println("posti prenotati: " + e.getReservedSeats() + "\n"
+//								+ "posti disponibili: " + e.getTotalSeats());
+//			in.close();
+//			} catch (Exception ex) {
+//				System.out.println(ex);
+//				in.close();
+//				return;
+//			}
+		
+		
+		
+		Concert z = new Concert("vasco", "15-12-2023", 100, "16:00", 50.55);
+		System.out.println(z);
 		
 		Event a = new Event("concerto1", "19-12-2023", 100);
 		Event b = new Event("concerto2", "20-12-2023", 100);
