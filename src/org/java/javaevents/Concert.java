@@ -37,6 +37,6 @@ public class Concert extends Event {
 	
 	@Override
 	public String toString() {
-		return super.converted + " " + converted + " " + "-" + " " + super.getTitle() + " " + "-" + " " + String.format("%.2f", getPrice()) + "€";
+		return super.getDate() + " " + converted + " " + "-" + " " + super.getTitle() + " " + "-" + " " + String.format("%.2f", getPrice()) + "€";
 	}
 }

@@ -10,7 +10,6 @@ public class Event {
 	private int totalSeats;
 	private int reservedSeats = 0;
 	LocalDate today = LocalDate.now();
-	protected LocalDate converted; 
 	
 	public Event(String title, String date, int totalSeats) throws Exception {
 
@@ -52,13 +51,13 @@ public class Event {
 	}
 	
 	public void reserve(int number) throws Exception {
-		if(converted.isBefore(today) || getTotalSeats() < 1)
+		if(date.isBefore(today) || getTotalSeats() < 1)
 			throw new Exception("the event has already occurred or there are no more seats available");
 		this.reservedSeats += number;
 		this.totalSeats -= number;
 	}
 	public void cancel(int number) throws Exception {
-		if(converted.isBefore(today) || getReservedSeats() < 1)
+		if(date.isBefore(today) || getReservedSeats() < 1)
 			throw new Exception("the event has already occurred or there are no reserved seats");
 		this.reservedSeats -= number;
 		this.totalSeats += number;
